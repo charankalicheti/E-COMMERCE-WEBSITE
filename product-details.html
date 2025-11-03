@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - MegaShop</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .product-details {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details h2 {
+            margin-top: 0;
+        }
+        .back-button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+        .features {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-details">
+        <h2 id="product-name">Product Name</h2>
+        <img id="product-image" src="" alt="Product Image">
+        <p id="product-price">Price: $0.00</p>
+        <div class="features">
+            <h3>Features:</h3>
+            <ul id="product-features"></ul>
+        </div>
+        <div class="description">
+            <h3>Description:</h3>
+            <p id="product-description">Product description goes here.</p>
+        </div>
+        <a href="index.html" class="back-button">Back to Products</a>
+    </div>
+
+    <script>
+        // Sample product data with more details
+        const products = [
+            { id: 1, name: "Wireless Earbuds", price: 59.99, description: "High-quality wireless earbuds with noise cancellation.", image:"C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\earbuds.jpeg", features: ["Noise cancellation", "15 hours battery life", "Bluetooth 5.0"] },
+            { id: 2, name: "Smart Watch", price: 199.99, description: "Feature-rich smart watch with fitness tracking.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\smart watch.jpeg", features: ["Heart rate monitor", "GPS tracking", "Water-resistant"] },
+            { id: 3, name: "Gaming Headset", price: 89.99, description: "Comfortable headset with surround sound.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\gaming headphones.jpeg", features: ["7.1 surround sound", "Noise-isolating design", "Adjustable microphone"] },
+            { id: 4, name: "4K Monitor", price: 399.99, description: "Ultra HD monitor with stunning picture quality.", image:"C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\4k monitor.jpeg", features: ["3840 x 2160 resolution", "HDR support", "Ultra-thin design"] },
+            { id: 5, name: "Bluetooth Speaker", price: 49.99, description: "Portable speaker with rich sound quality.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\bluetooth speaker.jpeg", features: ["10 hours playtime", "Water-resistant", "Built-in microphone"] },
+            { id: 6, name: "Laptop", price: 799.99, description: "Powerful laptop for work and gaming.", image:"C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\laptop.jpeg", features: ["16GB RAM", "512GB SSD", "Apple M2 -8-core processor"] },
+            { id: 7, name: "Gaming Chair", price: 129.99, description: "Ergonomic gaming chair for long sessions.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\gaming chair.jpeg", features: ["Adjustable height", "Lumbar support", "360-degree swivel"] },
+            { id: 8, name: "Tablet", price: 299.99, description: "Versatile tablet for work and entertainment.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\tablet.jpeg", features: ["10-inch display", "32GB storage", "Wi-Fi and LTE"] },
+            { id: 9, name: "Smartphone", price: 999.99, description: "Latest smartphone with cutting-edge technology.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\smartphone.jpeg", features: ["5G compatible", "128GB storage", "Triple camera system"] },
+            { id: 10, name: "Camera", price: 549.99, description: "High-resolution camera for photography enthusiasts.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\camera.jpeg", features: ["24MP sensor", "4K video recording", "Interchangeable lenses"] },
+            { id: 11, name: "VR Headset", price: 299.99, description: "Immersive virtual reality experience.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\vr headset.jpeg", features: ["High refresh rate", "Wide field of view", "Integrated audio"] },
+            { id: 12, name: "Drone", price: 499.99, description: "High-performance drone with HD camera.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\drone.png", features: ["30-minute flight time", "1080p HD video", "GPS-enabled"] },
+            { id: 13, name: "Fitness Tracker", price: 69.99, description: "Track your fitness goals with this smart device.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\fitness tracker.jpeg", features: ["Step counting", "Sleep tracking", "Heart rate monitoring"] },
+            { id: 14, name: "Smart Light Bulbs", price: 29.99, description: "Control your lighting with your smartphone.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\smart ight bulbs.jpeg", features: ["Color changing", "Voice control compatible", "Energy-efficient"] },
+            { id: 15, name: "Electric Kettle", price: 19.99, description: "Fast boiling electric kettle for your kitchen.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\electric kettle.jpeg", features: ["1.7L capacity", "Auto shut-off", "Cordless design"] },
+            { id: 16, name: "Coffee Maker", price: 89.99, description: "Brew your favorite coffee with ease.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\coffee maker.jpeg", features: ["12-cup capacity", "Programmable timer", "Built-in grinder"] },
+            { id: 17, name: "Blender", price: 59.99, description: "High-power blender for smoothies and soups.", image:"C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\blender.jpeg", features: ["700W motor", "Multiple speed settings", "Dishwasher-safe parts"] },
+            { id: 18, name: "Air Fryer", price: 129.99, description: "Healthy frying with little to no oil.", image: "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\air fryer.jpeg", features: ["3.7L capacity", "Adjustable temperature control", "Recipe book included"] },
+            { id: 19, name: "Vacuum Cleaner", price: 149.99, description: "Efficient vacuum cleaner for home cleaning.", image:"C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\vacumme cleaner.jpeg", features: ["Bagless design", "HEPA filter", "Lightweight"] },
+            { id: 20, name: "Dishwasher", price: 599.99, description: "Make dishwashing easy with this powerful machine.", image:"C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\dishwasher.jpeg", features: ["15 place settings", "Energy-efficient", "Quiet operation"] }
+        ];
+
+        // Get the product ID from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+
+        // Find the product data
+        const product = products.find(p => p.id === productId);
+
+        // Populate the product details on the page
+        if (product) {
+            document.getElementById('product-name').innerText = product.name;
+            document.getElementById('product-price').innerText = Price=product.price.toFixed(2);
+            document.getElementById('product-description').innerText = product.description;
+            document.getElementById('product-image').src = product.image;
+
+            // Add product features to the list
+            const featuresList = document.getElementById('product-features');
+            product.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerText = feature;
+                featuresList.appendChild(li);
+            });
+        }
+
+    </script>
+</body>
+</html>

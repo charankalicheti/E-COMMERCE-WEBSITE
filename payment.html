@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - MegaShop</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        /* Additional styles for the payment page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .payment-section {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .payment-section h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .total-amount {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">MegaShop</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#cart">Cart</a></li>
+        </ul>
+    </nav>
+
+    <section class="payment-section">
+        <h1>Payment Information</h1>
+
+        <!-- Display Total Bill Amount -->
+        <div class="total-amount" id="total-amount">
+            Total Bill: $<span id="total-bill">0.00</span>
+        </div>
+
+        <!-- Payment Form -->
+        <form id="payment-form" onsubmit="return handlePaymentSubmit(event)">
+            <div class="form-group">
+                <label for="cardName">Cardholder Name:</label>
+                <input type="text" id="cardName" name="cardName" placeholder="Enter Name as per the Card" required>
+            </div>
+            <div class="form-group">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter the Card number " required>
+            </div>
+            <div class="form-group">
+                <label for="expDate">Expiry Date (MM/YY):</label>
+                <input type="text" id="expDate" name="expDate" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            </div>
+
+            <button type="submit" class="btn">Submit Payment</button>
+        </form>
+    </section>
+
+    <script>
+        // Assume total bill is stored in localStorage (you can pass the total from the cart page)
+        const totalBill = parseFloat(localStorage.getItem('totalBill')) || 0;
+
+        // Display the total bill on the payment page
+        document.getElementById('total-bill').textContent = totalBill.toFixed(2);
+
+        // Function to generate a random bill ID
+        function generateBillID() {
+            return 'BILL-' + Math.floor(Math.random() * 1000000000).toString();
+        }
+
+        // Function to handle the payment form submission
+        function handlePaymentSubmit(event) {
+            event.preventDefault();
+
+            // Simulate form validation and payment processing
+            const cardName = document.getElementById('cardName').value;
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expDate = document.getElementById('expDate').value;
+            const cvv = document.getElementById('cvv').value;
+
+            if (cardName && cardNumber && expDate && cvv) {
+                // Generate Bill ID
+                const billID = generateBillID();
+
+                // Save the Bill ID in localStorage for the success page
+                localStorage.setItem('billID', billID);
+
+                // Redirect to success page
+                window.location.href = 'success.html';
+            } else {
+                alert('Please fill out all fields.');
+            }
+        }
+    </script>
+</body>
+</html>

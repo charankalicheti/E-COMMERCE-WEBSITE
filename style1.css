@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 100px 0; /* Keep the padding the same */
+    color: white;
+    height: 500px; /* Height of the hero section */
+    
+}
+
+.hero-background {
+    position: absolute;
+    width: 700%; /* 100% for each slide (7 images x 100%) */
+    height: 100%;
+    animation: slide 14s infinite; /* Adjust total duration for 7 slides */
+}
+
+.slide {
+    width: 14.2857%; /* Each slide takes up one-seventh of the container */
+    height: 75%;
+    background-size: contain; /* Use 'cover' to fill the area */
+    background-position: center;
+    float: left; /* Align slides horizontally */
+    background-repeat: no-repeat; /* Prevent image repetition */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(0);
+    }
+    12.5% {
+        transform: translateX(-14.2857%); /* Slide left */
+    }
+    22.5% {
+        transform: translateX(-14.2857%);
+    }
+    25% {
+        transform: translateX(-28.5714%); /* Slide left */
+    }
+    35% {
+        transform: translateX(-28.5714%);
+    }
+    37.5% {
+        transform: translateX(-42.8571%); /* Slide left */
+    }
+    47.5% {
+        transform: translateX(-42.8571%);
+    }
+    50% {
+        transform: translateX(-57.1428%); /* Slide left */
+    }
+    60% {
+        transform: translateX(-57.1428%);
+    }
+    62.5% {
+        transform: translateX(-71.4285%); /* Slide left */
+    }
+    72.5% {
+        transform: translateX(-71.4285%);
+    }
+    75% {
+        transform: translateX(-85.7142%); /* Slide left */
+    }
+    85% {
+        transform: translateX(-85.7142%);
+    }
+    87.5% {
+        transform: translateX(0); /* Reset to first image */
+    }
+    100% {
+        transform: translateX(0); /* Reset to first image */
+    }
+}
+
+/* Button Style for Hero Section */
+.hero .btn {
+    background-color: rgba(255, 99, 71, 0.9); /* Slightly transparent background */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative; /* Ensure the button is positioned above the background */
+    z-index: 1; /* Bring button above background images */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
+}
+
+.hero .btn:hover {
+    background-color: rgba(229, 83, 66, 0.9); /* Slightly transparent on hover */
+}
+
+/* Add a backdrop to improve text visibility */
+.hero h1, .hero p {
+    position: relative; /* Position text above background */
+    z-index: 1; /* Bring text above background images */
+}
+
+
+/* Products Section */
+.products {
+    padding: 50px;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Cart Section */
+.cart {
+    padding: 50px;
+}
+
+.cart-items {
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.cart-items div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cart-items button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cart-items button:hover {
+    background-color: #c82333;
+}
+
+.total-price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.checkout {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.checkout:hover {
+    background-color: #0056b3;
+}

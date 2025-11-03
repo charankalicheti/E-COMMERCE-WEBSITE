@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success - MegaShop</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        .success-section {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .success-section h1 {
+            color: #28a745;
+        }
+
+        .bill-id {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <section class="success-section">
+        <h1>Order Successful!</h1>
+        <p>Thank you for your purchase! Your order has been placed and will be processed shortly.</p>
+        <p>We have sent a confirmation email with your order details.</p>
+
+        <!-- Display Bill ID -->
+        <div class="bill-id">
+            Bill ID: <span id="bill-id">BILL-123456789</span>
+        </div>
+
+        <a href="index.html" class="btn">Continue Shopping</a>
+    </section>
+
+    <script>
+        // Get the Bill ID from localStorage and display it
+        const billID = localStorage.getItem('billID');
+        document.getElementById('bill-id').textContent = billID || 'Unknown';
+    </script>
+</body>
+</html>
