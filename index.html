@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaShop - Home</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        /* Basic styles for the product grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            background-color: #fff;
+            transition: transform 0.2s;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product h3 {
+            margin: 10px 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">MegaShop</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#cart">Cart</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="slide" style="background-image: url('https://i.ytimg.com/vi/jFKfnjkqgQE/maxresdefault.jpg');"></div>
+            <div class="slide" style="background-image: url('https://tse3.mm.bing.net/th?id=OIP.Z3L9otAuL3d97OHclLf-ywHaDt&pid=Api&P=0&h=180');"></div>
+            <div class="slide" style="background-image: url('https://tse4.mm.bing.net/th?id=OIP.9ULXa5BVldSwXLFLUFP2LAHaEK&pid=Api&P=0&h=180');"></div>
+            <div class="slide" style="background-image: url('https://tse1.mm.bing.net/th?id=OIP.28FuYll1yFRSPzIa-bZGcwHaEK&pid=Api&P=0&h=180');"></div>
+            <div class="slide" style="background-image: url('https://tse1.mm.bing.net/th?id=OIP.JfmZujC-oxQfceBsssqgjwHaEl&pid=Api&P=0&h=180');"></div>
+            <div class="slide" style="background-image: url('https://tse1.mm.bing.net/th?id=OIP.WLTmIsuNTp3UwU6Qmef9_wHaE7&pid=Api&P=0&h=180');"></div>
+            <div class="slide" style="background-image: url('https://tse3.mm.bing.net/th?id=OIP.v9R-EilVIpMh4M2I3DLdiwHaEK&pid=Api&P=0&h=180');"></div>
+
+        </div>
+        <div class="hero-txt">
+        <h1> Welcome to MegaShop </h1>
+        <p>Your one-stop-shop for all your needs!</p>
+        <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <!-- Product List (20 Products) -->
+            <div class="product" data-id="1">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\earbuds.jpeg" alt="Wireless Earbuds"  style="height:200px; width:170px">
+                <h3>Wireless Earbuds</h3>
+                <p>$59.99</p>
+                <a href="product-details.html?id=1" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="2">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\smart watch.jpeg" style="height:200px; width:170px" alt="Smart Watch">
+                <h3>Smart Watch</h3>
+                <p>$199.99</p>
+                <a href="product-details.html?id=2" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="3">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\gaming headphones.jpeg" alt="Gaming Headset" style="height:200px; width:170px">
+                <h3>Gaming Headset</h3>
+                <p>$89.99</p>
+                <a href="product-details.html?id=3" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="4">
+                <img src= "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\4k monitor.jpeg" alt="4K Monitor" style="height:200px; width:170px">
+                <h3>4K Monitor</h3>
+                <p>$399.99</p>
+                <a href="product-details.html?id=4" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="5">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\bluetooth speaker.jpeg" alt="Bluetooth Speaker" style="height:200px; width:170px">
+                <h3>Bluetooth Speaker</h3>
+                <p>$49.99</p>
+                <a href="product-details.html?id=5" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="6">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\laptop.jpeg" alt="Laptop" style="height:200px; width:170px">
+                <h3>Laptop</h3>
+                <p>$799.99</p>
+                <a href="product-details.html?id=6" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="7">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\gaming chair.jpeg" alt="Gaming Chair" style="height:200px; width:170px">
+                <h3>Gaming Chair</h3>
+                <p>$129.99</p>
+                <a href="product-details.html?id=7" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="8">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\tablet.jpeg" alt="Tablet" style="height:200px; width:170px">
+                <h3>Tablet</h3>
+                <p>$299.99</p>
+                <a href="product-details.html?id=8" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="9">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\smartphone.jpeg" alt="Smartphone" style="height:200px; width:170px">
+                <h3>Smartphone</h3>
+                <p>$999.99</p>
+                <a href="product-details.html?id=9" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="10">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\camera.jpeg" alt="Camera" style="height:200px; width:170px">
+                <h3>Camera</h3>
+                <p>$549.99</p>
+                <a href="product-details.html?id=10" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="11">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\vr headset.jpeg" alt="VR Headset" style="height:200px; width:170px">
+                <h3>VR Headset</h3>
+                <p>$299.99</p>
+                <a href="product-details.html?id=11" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="12">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\drone.png" alt="Drone" style="height:200px; width:170px">
+                <h3>Drone</h3>
+                <p>$499.99</p>
+                <a href="product-details.html?id=12" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="13">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\fitness tracker.jpeg" alt="Fitness Tracker" style="height:200px; width:170px">
+                <h3>Fitness Tracker</h3>
+                <p>$69.99</p>
+                <a href="product-details.html?id=13" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="14">
+                <img src= "C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\smart ight bulbs.jpeg"alt="Smart Light Bulbs" style="height:200px; width:170px">
+                <h3>Smart Light Bulbs</h3>
+                <p>$29.99</p>
+                <a href="product-details.html?id=14" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="15">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\electric kettle.jpeg"alt="Electric Kettle" style="height:200px; width:170px">
+                <h3>Electric Kettle</h3>
+                <p>$19.99</p>
+                <a href="product-details.html?id=15" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="16">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\coffee maker.jpeg" alt="Coffee Maker" style="height:200px; width:170px">
+                <h3>Coffee Maker</h3>
+                <p>$89.99</p>
+                <a href="product-details.html?id=16" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="17">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\blender.jpeg" alt="Blender" style="height:200px; width:170px">
+                <h3>Blender</h3>
+                <p>$59.99</p>
+                <a href="product-details.html?id=17" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="18">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\air fryer.jpeg" alt="Air Fryer" style="height:200px; width:170px">
+                <h3>Air Fryer</h3>
+                <p>$129.99</p>
+                <a href="product-details.html?id=18" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="19">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\vacumme cleaner.jpeg" alt="Vacuum Cleaner" style="height:200px; width:170px">
+                <h3>Vacuum Cleaner</h3>
+                <p>$149.99</p>
+                <a href="product-details.html?id=19" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="20">
+                <img src="C:\\Users\\charan\\Desktop\\project ecommerce\\project images\\dishwasher.jpeg" alt="Dishwasher" style="height:200px; width:170px">
+                <h3>Dishwasher</h3>
+                <p>$599.99</p>
+                <a href="product-details.html?id=20" class="view-details">View Details</a><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart" class="cart">
+        <h2>Your Cart</h2>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here by JavaScript -->
+        </div>
+        <p class="total-price">Total: $0.00</p>
+
+        <!-- Checkout Section -->
+        <button class="checkout" onclick="redirectToPayment()">Proceed to Payment</button>
+    </section>
+
+    <script src="script1.js"></script>
+</body>
+</html>
